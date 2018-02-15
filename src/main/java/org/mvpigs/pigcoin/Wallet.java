@@ -9,8 +9,8 @@ public class Wallet {
 
     private PublicKey address;
     private PrivateKey sKey;
-    private double total_input;
-    private double total_output;
+    private double total_input = 0;
+    private double total_output = 0;
     private double balance;
     private ArrayList<Transaction> inputTransactions = new ArrayList<Transaction>();
     private ArrayList<Transaction> outputTransactions = new ArrayList<Transaction>();
@@ -44,24 +44,47 @@ public class Wallet {
         for (Transaction trx: blockChain.getBlockchain()) {
             movesPGC(trx.getpKey_sender().hashCode(), trx.getpKey_recipient().hashCode(), trx.getPigcoins());
         }
+//        for (Transaction trxOut: inputTransactions) {
+//            if(trxOut.getpKey_sender() == this.getAddress()){
+//                setBalance(this.balance - trxOut.getPigcoins());
+//            }
+//        }
+//
+//        for (Transaction trxIn: outputTransactions) {
+//            if(trxIn.getpKey_sender() == this.getAddress()){
+//                setBalance(this.balance + trxIn.getPigcoins());
+//            }
+//        }
+
     }
 
     //Destino
     public void loadInputTransactions(BlockChain blockChain){
+        //Nueva transacción, reiniciamos el total_input
+        setTotal_input(0);
+
         for (Transaction trx: blockChain.getBlockchain()) {
             if (getAddress() == trx.getpKey_recipient()) {
                 inputTransactions.add(trx);
+                total_input+=trx.getPigcoins();
+
             }
         }
+        setBalance(getTotal_input()-getTotal_output()); //Calculamos el balance
     }
 
     //Origen
     public void loadOutputTransactions(BlockChain blockChain){
+
+        //Nueva transacción, reiniciamos totalOutput
+        setTotal_output(0);
         for (Transaction trx: blockChain.getBlockchain()) {
             if (getAddress() == trx.getpKey_sender()) {
                 outputTransactions.add(trx);
+                setTotal_output(trx.getPigcoins());
             }
         }
+        setBalance(getTotal_input()-getTotal_output()); //Calculamos el balance
     }
 
     public ArrayList<Transaction> getInputTransactions(){
