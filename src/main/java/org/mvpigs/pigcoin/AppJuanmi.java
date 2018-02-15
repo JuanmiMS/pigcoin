@@ -3,7 +3,7 @@ package org.mvpigs.pigcoin;
 import java.security.KeyPair;
 import java.util.Map;
 
-public class App {
+public class AppJuanmi {
 
     public static void main( String[] args )
     {
@@ -20,7 +20,7 @@ public class App {
         wallet_1.setSK(pair.getPrivate());
         wallet_1.setAddress(pair.getPublic());
 
-//        System.out.println("\n Direccion de la Wallet_1: \n" +  wallet_1.getAddress().hashCode());
+        System.out.println("\n Direccion de la Wallet_1: \n" +  wallet_1.getAddress().hashCode());
 //
 //        /**
 //         * Crea una segunda wallet, esta vez generando sus claves
