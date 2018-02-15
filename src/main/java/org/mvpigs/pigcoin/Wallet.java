@@ -12,6 +12,8 @@ public class Wallet {
     private double total_input;
     private double total_output;
     private double balance;
+    private ArrayList<Transaction> inputTransactions = new ArrayList<Transaction>();
+    private ArrayList<Transaction> outputTransactions = new ArrayList<Transaction>();
 
     //Constructor
     public Wallet(){
@@ -44,6 +46,31 @@ public class Wallet {
         }
     }
 
+    //Destino
+    public void loadInputTransactions(BlockChain blockChain){
+        for (Transaction trx: blockChain.getBlockchain()) {
+            if (getAddress() == trx.getpKey_recipient()) {
+                inputTransactions.add(trx);
+            }
+        }
+    }
+
+    //Origen
+    public void loadOutputTransactions(BlockChain blockChain){
+        for (Transaction trx: blockChain.getBlockchain()) {
+            if (getAddress() == trx.getpKey_sender()) {
+                outputTransactions.add(trx);
+            }
+        }
+    }
+
+    public ArrayList<Transaction> getInputTransactions(){
+        return inputTransactions;
+    }
+    public ArrayList<Transaction> getOutputTransactions(){
+        return outputTransactions;
+    }
+
     /*Métodos privados*/
 
     private void movesPGC(int origen, int destino, double cantidad){
@@ -59,9 +86,6 @@ public class Wallet {
         else if(destino == this.address.hashCode()){
             this.setBalance(this.balance + cantidad);
         }
-
-
-
     }
 
     /*Getters y setters*/
