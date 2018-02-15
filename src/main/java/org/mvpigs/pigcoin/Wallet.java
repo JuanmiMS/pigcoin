@@ -90,9 +90,14 @@ public class Wallet {
     public Map collectCoins(double pigcoins){
 
         Map<String, Double> consumedCoins = new HashMap<>();
+        for (Transaction trx: outputTransactions) {
+            consumedCoins.put(trx.getHash(), trx.getPigcoins());
+        }
         for (Transaction trx: inputTransactions) {
             consumedCoins.put(trx.getHash(), trx.getPigcoins());
         }
+
+
         return consumedCoins;
     }
 

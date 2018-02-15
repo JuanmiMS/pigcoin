@@ -6,13 +6,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.mvpigs.pigcoin.BlockChain;
 import org.mvpigs.pigcoin.Transaction;
-import org.mvpigs.pigcoin.Wallet;
 
-
-import java.security.KeyPair;
-import java.util.ArrayList;
-
-public class testBlockChain extends testAppJuanmi {
+public class testBlockChain extends testWallet {
 
         @Before
     public void testCrearBlockChain(){

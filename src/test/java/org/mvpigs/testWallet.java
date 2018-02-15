@@ -13,12 +13,12 @@ import org.mvpigs.pigcoin.Wallet;
 import java.security.KeyPair;
 import java.util.ArrayList;
 
-public class testAppJuanmi {
+public class testWallet {
 
-    public Wallet wallet_1;
-    public Wallet wallet_2;
+    public Wallet wallet_1 = new Wallet();
+    public Wallet wallet_2 = new Wallet();
     public Wallet origin = new Wallet();
-    public BlockChain bChain;
+    public BlockChain bChain = new BlockChain();
     public ArrayList<Transaction> blockchain = new ArrayList<Transaction>();
     public Transaction trx;
 
@@ -65,7 +65,26 @@ public class testAppJuanmi {
                 "\nBalance = "+wallet_2.getBalance()+"\n");
     }
 
-
-
+//    @Test
+//    public void testVerPigcoinsWallets(){
+//
+//        wallet_1.loadCoins(bChain);
+//        wallet_1.loadInputTransactions(bChain);
+//        wallet_1.loadOutputTransactions(bChain);
+//        wallet_2.loadCoins(bChain);
+//        wallet_2.loadInputTransactions(bChain);
+//        wallet_2.loadOutputTransactions(bChain);
+//
+//        assertEquals(wallet_1.toString(), "\n" +
+//                "Wallet = 1990341\n" +
+//                "Total input = 0.0\n" +
+//                "Total output = 0.0\n" +
+//                "Balance = 0.0");
+//
+//        assertEquals(wallet_2.toString(),"Wallet = 1982423\n" +
+//                "Total input = 0.0\n" +
+//                "Total output = 0.0\n" +
+//                "Balance = 0.0" );
+//    }
 
 }
