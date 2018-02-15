@@ -3,6 +3,7 @@ package org.mvpigs.pigcoin;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.ArrayList;
 
 public class Wallet {
 
@@ -30,9 +31,37 @@ public class Wallet {
     @Override
     public String toString(){
         return "\nWallet = "+ address.hashCode()+
-                "\nTotal input = "+total_input+
-                "\nTotal output = "+total_output+
-                "\nBalance = "+balance+"\n";
+            "\nTotal input = "+total_input+
+            "\nTotal output = "+total_output+
+            "\nBalance = "+balance+"\n";
+    }
+
+    public void loadCoins(BlockChain blockChain){
+        //Recorremos TODOS los movimientos que ha habido en el blockchain
+        //Y calculamos los PGC (Pigcoins) de las wallets
+        for (Transaction trx: blockChain.getBlockchain()) {
+            movesPGC(trx.getpKey_sender().hashCode(), trx.getpKey_recipient().hashCode(), trx.getPigcoins());
+        }
+    }
+
+    /*Métodos privados*/
+
+    private void movesPGC(int origen, int destino, double cantidad){
+//        System.out.println(origen + " MANDA "+cantidad+" a "+destino);
+//        System.out.println(this.address.hashCode());
+
+        //Si la dirección de la wallet coincide con destino, suma los PGC
+        //Si a dirección de la wallet coincide con origen, resta los PGC
+        //En caso de no aparecer, no ejecuta nada.
+        if (origen == this.address.hashCode()){
+            this.setBalance(this.balance - cantidad);
+        }
+        else if(destino == this.address.hashCode()){
+            this.setBalance(this.balance + cantidad);
+        }
+
+
+
     }
 
     /*Getters y setters*/
