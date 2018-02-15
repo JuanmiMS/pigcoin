@@ -18,9 +18,6 @@ public class BlockChain {
     //Métodos públicos
     public void addOrigin(Transaction transaction){
         blockchain.add(transaction);
-
-        //añadimos y quitamos saldo
-
     }
     public void summarize(){
         for (Transaction trx: blockchain) {

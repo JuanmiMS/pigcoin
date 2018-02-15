@@ -202,21 +202,21 @@ public class AppJuanmi {
          * que ya hayas enviado con anterioridad o el blockchain rechazara las nuevas
          */
 
-//        Double pigcoins = 25d;
-//        Map<String, Double> consumedCoins = wallet_1.collectCoins(pigcoins);
-//        System.out.println("Pigcoins enviados a la wallet_2 y transacciones consumidas: " + consumedCoins);
-//
-//        /**
-//         * Una vez que recolectes los pigcoins (transacciones) de tu wallet
-//         * envialas al blockchain.
-//         * Debes firmar el mensaje con tu clave privada.
-//         */
-//
-//        String message = "he roto la hucha :(";
-//        byte[] signedTransaction = wallet_1.signTransaction(message); // usa GenSig.sign()
-//        wallet_1.sendCoins(wallet_2.getAddress(), pigcoins, message, bChain); // usa wallet.collectCoins() y bChain.processTransactions()
-//
-//        /**
+        Double pigcoins = 25d;
+        Map<String, Double> consumedCoins = wallet_1.collectCoins(pigcoins);
+        System.out.println("Pigcoins enviados a la wallet_2 y transacciones consumidas: " + consumedCoins);
+
+        /**
+         * Una vez que recolectes los pigcoins (transacciones) de tu wallet
+         * envialas al blockchain.
+         * Debes firmar el mensaje con tu clave privada.
+         */
+
+ //       String message = "he roto la hucha :(";
+ //       byte[] signedTransaction = wallet_1.signTransaction(message); // usa GenSig.sign()
+ //       wallet_1.sendCoins(wallet_2.getAddress(), pigcoins, message, bChain); // usa wallet.collectCoins() y bChain.processTransactions()
+
+        /**
 //         *  wallet.sendCoins() invoca a
 //         *  bChain.processTransactions(wallet_1.getAddress(), wallet_2.getAddress(), consumedCoins, message, signedTransaction);
 //         */

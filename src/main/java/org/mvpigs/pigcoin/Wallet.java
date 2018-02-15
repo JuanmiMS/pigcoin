@@ -4,6 +4,8 @@ import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Wallet {
 
@@ -14,6 +16,7 @@ public class Wallet {
     private double balance;
     private ArrayList<Transaction> inputTransactions = new ArrayList<Transaction>();
     private ArrayList<Transaction> outputTransactions = new ArrayList<Transaction>();
+
 
     //Constructor
     public Wallet(){
@@ -44,17 +47,6 @@ public class Wallet {
         for (Transaction trx: blockChain.getBlockchain()) {
             movesPGC(trx.getpKey_sender().hashCode(), trx.getpKey_recipient().hashCode(), trx.getPigcoins());
         }
-//        for (Transaction trxOut: inputTransactions) {
-//            if(trxOut.getpKey_sender() == this.getAddress()){
-//                setBalance(this.balance - trxOut.getPigcoins());
-//            }
-//        }
-//
-//        for (Transaction trxIn: outputTransactions) {
-//            if(trxIn.getpKey_sender() == this.getAddress()){
-//                setBalance(this.balance + trxIn.getPigcoins());
-//            }
-//        }
 
     }
 
@@ -92,6 +84,25 @@ public class Wallet {
     }
     public ArrayList<Transaction> getOutputTransactions(){
         return outputTransactions;
+    }
+
+
+    public Map collectCoins(double pigcoins){
+
+        Map<String, Double> consumedCoins = new HashMap<>();
+        for (Transaction trx: inputTransactions) {
+            consumedCoins.put(trx.getHash(), trx.getPigcoins());
+        }
+        return consumedCoins;
+    }
+
+    public void signTransaction(String message){
+
+    }
+
+    public void sendCoins(PublicKey address,double pigcoins,String message, BlockChain bChain){
+ //      bChain.processTransactions(wallet_1.getAddress(), wallet_2.getAddress(), consumedCoins, message, signedTransaction);
+
     }
 
     /*Métodos privados*/
