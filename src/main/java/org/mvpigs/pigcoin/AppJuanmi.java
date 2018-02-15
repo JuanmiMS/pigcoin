@@ -21,17 +21,17 @@ public class AppJuanmi {
         wallet_1.setAddress(pair.getPublic());
 
         System.out.println("\n Direccion de la Wallet_1: \n" +  wallet_1.getAddress().hashCode());
-//
-//        /**
-//         * Crea una segunda wallet, esta vez generando sus claves
-//         * con un metodo wallet.generateKeyPair() que encapsula
-//         * el codigo de la anterior historia de usuario
-//         */
-//
-//        Wallet wallet_2 = new Wallet();
-//        wallet_2.generateKeyPair();
-//
-//        System.out.println("\n Direccion de la Wallet_2: \n" + wallet_2.getAddress().hashCode());
+
+        /**
+         * Crea una segunda wallet, esta vez generando sus claves
+         * con un metodo wallet.generateKeyPair() que encapsula
+         * el codigo de la anterior historia de usuario
+         */
+
+        Wallet wallet_2 = new Wallet();
+        wallet_2.generateKeyPair();
+
+        System.out.println("\n Direccion de la Wallet_2: \n" + wallet_2.getAddress().hashCode());
 //
 //        /**
 //         * Visualiza las Wallet 1 y 2
