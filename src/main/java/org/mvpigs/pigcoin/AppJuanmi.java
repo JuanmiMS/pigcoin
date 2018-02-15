@@ -32,17 +32,17 @@ public class AppJuanmi {
         wallet_2.generateKeyPair();
 
         System.out.println("\n Direccion de la Wallet_2: \n" + wallet_2.getAddress().hashCode());
-//
-//        /**
-//         * Visualiza las Wallet 1 y 2
-//         */
-//
-//        System.out.println("\n" + "Ver Wallets 1 y 2" + "\n" +
-//                                  "================="        );
-//
-//        System.out.println("Wallet_1: \n" + wallet_1.toString());
-//        System.out.println("Wallet_2: \n" + wallet_2.toString());
-//
+
+        /**
+         * Visualiza las Wallet 1 y 2
+         */
+
+        System.out.println("\n" + "Ver Wallets 1 y 2" + "\n" +
+                                  "================="        );
+
+        System.out.println("Wallet_1: \n" + wallet_1.toString());
+        System.out.println("Wallet_2: \n" + wallet_2.toString());
+
 //        /**
 //         * Crea una transaccion de pigcoins
 //         * Visualiza la transaccion

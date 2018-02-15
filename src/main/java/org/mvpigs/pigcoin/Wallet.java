@@ -7,6 +7,9 @@ import java.security.PublicKey;
 public class Wallet {
     private PublicKey address;
     private PrivateKey sKey;
+    private double total_input;
+    private double total_output;
+    private double balance;
 
     //Constructor
     public Wallet(){
@@ -21,6 +24,14 @@ public class Wallet {
         KeyPair pair = GenSig.generateKeyPair();
         setSK(pair.getPrivate());
         setAddress(pair.getPublic());
+    }
+
+    @Override
+    public String toString(){
+        return "\nWallet = "+ address.hashCode()+
+                "\nTotal input = "+total_input+
+                "\nTotal output = "+total_output+
+                "\nBalance = "+balance+"\n";
     }
 
     /*Getters y setters*/
