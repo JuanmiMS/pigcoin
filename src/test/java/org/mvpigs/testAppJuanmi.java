@@ -12,15 +12,17 @@ import java.security.KeyPair;
 
 public class testAppJuanmi {
 
-    private Wallet wallet_1;
-    private Wallet wallet_2;
-
+    public Wallet wallet_1;
+    public Wallet wallet_2;
+    public Wallet origin = new Wallet();
     @Before
     public void testCreacionWallets(){
         wallet_1 = new Wallet();
         wallet_1.generateKeyPair();
         wallet_2 = new Wallet();
         wallet_2.generateKeyPair();
+        origin = new Wallet();
+        origin.generateKeyPair();
     }
 
 

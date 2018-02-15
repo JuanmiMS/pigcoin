@@ -8,10 +8,9 @@ import org.mvpigs.pigcoin.GenSig;
 import org.mvpigs.pigcoin.Transaction;
 import org.mvpigs.pigcoin.Wallet;
 
-public class testTransaction {
-    private Transaction trx;
-    private Wallet wallet_1;
-    private Wallet wallet_2;
+public class testTransaction extends testAppJuanmi{
+
+    public Transaction trx;
 
 
     @Before
