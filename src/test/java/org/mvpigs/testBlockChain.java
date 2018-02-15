@@ -12,13 +12,9 @@ import org.mvpigs.pigcoin.Wallet;
 import java.security.KeyPair;
 import java.util.ArrayList;
 
-public class testBlockChain extends testTransaction {
+public class testBlockChain extends testAppJuanmi {
 
-    public BlockChain bChain;
-    ArrayList<Transaction> blockchain = new ArrayList<Transaction>();
-
-
-    @Before
+        @Before
     public void testCrearBlockChain(){
         bChain= new BlockChain();
         trx = new Transaction("hash_1", "0", origin.getAddress(), wallet_1.getAddress(), 20, "bacon eggs");

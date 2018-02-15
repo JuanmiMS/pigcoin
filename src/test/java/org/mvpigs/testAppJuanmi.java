@@ -4,17 +4,24 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+import org.mvpigs.pigcoin.BlockChain;
 import org.mvpigs.pigcoin.GenSig;
+import org.mvpigs.pigcoin.Transaction;
 import org.mvpigs.pigcoin.Wallet;
 
 
 import java.security.KeyPair;
+import java.util.ArrayList;
 
 public class testAppJuanmi {
 
     public Wallet wallet_1;
     public Wallet wallet_2;
     public Wallet origin = new Wallet();
+    public BlockChain bChain;
+    public ArrayList<Transaction> blockchain = new ArrayList<Transaction>();
+    public Transaction trx;
+
     @Before
     public void testCreacionWallets(){
         wallet_1 = new Wallet();
