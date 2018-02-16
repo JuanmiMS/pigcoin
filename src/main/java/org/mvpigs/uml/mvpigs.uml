@@ -3,12 +3,10 @@
   <ID>JAVA</ID>
   <OriginalElement>org.mvpigs</OriginalElement>
   <nodes>
-    <node x="356.0" y="0.0">org.mvpigs.pigcoin</node>
-    <node x="8.0" y="497.0">org.mvpigs.testTransaction</node>
-    <node x="551.0" y="0.0">org.mvpigs.img</node>
-    <node x="26.5" y="357.0">org.mvpigs.testBlockChain</node>
-    <node x="0.0" y="0.0">org.mvpigs.testAppJuanmi</node>
-    <node x="0.0" y="659.0">org.mvpigs.uml</node>
+    <node x="0.0" y="302.0">org.mvpigs.pigcoin</node>
+    <node x="-69.09090909090901" y="112.72727272727275">org.mvpigs.testTransaction</node>
+    <node x="18.5" y="0.0">org.mvpigs.testBlockChain</node>
+    <node x="195.0" y="302.0">org.mvpigs.uml</node>
   </nodes>
   <notes />
   <edges>
@@ -16,21 +14,17 @@
       <point x="0.0" y="-58.5" />
       <point x="0.0" y="45.0" />
     </edge>
-    <edge source="org.mvpigs.testBlockChain" target="org.mvpigs.testAppJuanmi">
-      <point x="0.0" y="-45.0" />
-      <point x="0.0" y="153.5" />
-    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.1" x="160.5" y="215.09090909090907" />
+  <settings layout="Hierarchic Group" zoom="1.1" x="161.0" y="215.0" />
   <SelectedNodes>
-    <node>org.mvpigs.pigcoin</node>
+    <node>org.mvpigs.testTransaction</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
-    <Category>Constructors</Category>
-    <Category>Methods</Category>
-    <Category>Properties</Category>
     <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
